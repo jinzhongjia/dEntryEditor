@@ -1,0 +1,16 @@
+.{
+    .name = "dEntryEditor",
+    .version = "0.0.0",
+    .minimum_zig_version = "0.12.1",
+    .dependencies = .{
+        .@"zig-webui" = .{
+            .url = "https://github.com/webui-dev/zig-webui/archive/8f5231f8ca96453fbebd4ab443922b57fbd75e23.tar.gz",
+            .hash = "12205e709a54887c549f122f4f288c97c550e841d0cc10f15930f232aa02346d8f36",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
