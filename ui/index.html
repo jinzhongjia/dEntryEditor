@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Desktop Entry Editor</title>
+    <link rel="stylesheet" href="css/mdui.css" />
+    <script src="webui.js"></script>
+    <script src="js/mdui.global.js"></script>
+  </head>
+
+  <body>
+    <mdui-button class="btn">click me</mdui-button>
+
+    <script>
+      document.querySelector(".btn").addEventListener("click", () => {
+        mdui.snackbar({ message: "click the button!" });
+      });
+    </script>
+  </body>
+</html>

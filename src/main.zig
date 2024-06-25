@@ -3,8 +3,11 @@ const webui = @import("webui");
 
 pub fn main() !void {
     // create a new window
-    const nwin = webui.newWindow();
+    var nwin = webui.newWindow();
 
-    _ = nwin;
+    _ = nwin.setRootFolder("ui");
+
+    _ = nwin.showBrowser("index.html", .Firefox);
+
     webui.wait();
 }
