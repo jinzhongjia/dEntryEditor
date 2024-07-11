@@ -2,12 +2,13 @@ const std = @import("std");
 const webui = @import("webui");
 
 pub fn main() !void {
-    // create a new window
-    var nwin = webui.newWindow();
+    var win = webui.newWindow();
 
-    _ = nwin.setRootFolder("ui");
-
-    _ = nwin.showBrowser("index.html", .Firefox);
+    _ = win.setRootFolder("front");
+    _ = win.show("index.html");
+    // _ = win.showBrowser("index.html", .Chrome);
 
     webui.wait();
+
+    webui.clean();
 }

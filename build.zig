@@ -11,6 +11,11 @@ pub fn build(b: *std.Build) void {
         .is_static = true, // whether static link
     });
 
+    const zTroy = b.dependency("zTroy", .{
+        .target = target,
+        .optimize = optimize,
+    });
+
     const exe = b.addExecutable(.{
         .name = "dEntryEditor",
         .root_source_file = b.path("src/main.zig"),
@@ -20,6 +25,7 @@ pub fn build(b: *std.Build) void {
 
     // add module
     exe.root_module.addImport("webui", zig_webui.module("webui"));
+    exe.root_module.addImport("troy", zTroy.module("troy"));
 
     b.installArtifact(exe);
     const run_cmd = b.addRunArtifact(exe);
